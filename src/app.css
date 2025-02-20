@@ -1,0 +1,199 @@
+/* style/index.css - Global CSS (variables and body styles) */
+:root {
+    --body-bg-color: #e0f7fa;
+    --sidebar-bg-color: rgba(255, 255, 255, 0.8);
+    --sidebar-text-color: #4a6572;
+    --sidebar-menu-item-hover-bg-color: rgba(255, 255, 255, 0.9);
+    --sidebar-menu-item-hover-text-color: #3f51b5;
+    --main-content-text-color: #4a6572;
+    --header-border-color: #cfd8dc;
+    --search-input-bg-color: rgba(255, 255, 255, 0.8);
+    --search-input-border-color: #e0e6ed;
+    --search-input-focus-border-color: #cddff2;
+    --search-input-text-color: #4a6572;
+    --search-icon-color: #78909c;
+    --user-icon-bg-color: rgba(255, 255, 255, 0.8);
+    --user-icon-color: #607d8b;
+    --dropdown-menu-bg-color: rgba(255, 255, 255, 0.95);
+    --dropdown-menu-item-text-color: #607d8b;
+    --dropdown-menu-item-hover-bg-color: rgba(255, 255, 255, 0.8);
+    --dropdown-menu-item-hover-text-color: #3f51b5;
+    --module-icon-bg-color: rgba(255, 255, 255, 0.5);
+    --module-icon-main-color: #3f51b5;
+    --module-info-main-text-color: #4a6572;
+    --module-info-description-color: #78909c;
+    --card-bg-color: rgba(255, 255, 255, 0.9);
+    --card-heading-color: #4a6572;
+    --table-header-text-color: #78909c;
+    --table-row-border-color: #e0e6ed;
+    --table-text-color: #4a6572;
+    --status-completed-color: #4caf50;
+    --status-completed-bg-color: #e8f5e9;
+    --status-pending-color: #ff9800;
+    --status-pending-bg-color: #fff3e0;
+    --status-declined-color: #f44336;
+    --status-declined-bg-color: #ffebee;
+    --view-all-link-color: #3f51b5;
+
+    --sidebar-scroll-thumb-color: #b0bec5;
+    --sidebar-scroll-track-color: transparent;
+    --sidebar-scroll-width: 8px;
+    --sidebar-scroll-border-radius: 10px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-bg-color);
+    color: var(--main-content-text-color);
+    display: flex;
+    overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    --body-bg-color: #121212;
+    --sidebar-bg-color: rgba(30, 30, 30, 0.8);
+    --sidebar-text-color: #e0e0e0;
+    --sidebar-menu-item-hover-bg-color: rgba(50, 50, 50, 0.9);
+    --sidebar-menu-item-hover-text-color: #bbdefb;
+    --main-content-text-color: #e0e0e0;
+    --header-border-color: #555;
+    --search-input-bg-color: rgba(50, 50, 50, 0.8);
+    --search-input-border-color: #777;
+    --search-input-focus-border-color: #90caf9;
+    --search-input-text-color: #e0e0e0;
+    --search-icon-color: #ccc;
+    --user-icon-bg-color: rgba(50, 50, 50, 0.8);
+    --user-icon-color: #ccc;
+    --dropdown-menu-bg-color: rgba(30, 30, 30, 0.95);
+    --dropdown-menu-item-text-color: #ccc;
+    --dropdown-menu-item-hover-bg-color: rgba(50, 50, 50, 0.8);
+    --dropdown-menu-item-hover-text-color: #bbdefb;
+    --module-icon-bg-color: rgba(50, 50, 50, 0.5);
+    --module-icon-main-color: #bbdefb;
+    --module-info-main-text-color: #e0e0e0;
+    --module-info-description-color: #ccc;
+    --card-bg-color: rgba(30, 30, 30, 0.9);
+    --card-heading-color: #e0e0e0;
+    --table-header-text-color: #ccc;
+    --table-row-border-color: #777;
+    --table-text-color: #e0e0e0;
+    --status-completed-color: #80cbc4;
+    --status-completed-bg-color: #26a69a;
+    --status-pending-color: #ffb74d;
+    --status-pending-bg-color: #f57c00;
+    --status-declined-color: #e57373;
+    --status-declined-bg-color: #d32f2f;
+    --view-all-link-color: #bbdefb;
+
+    --sidebar-scroll-thumb-color: #757575;
+    --sidebar-scroll-track-color: transparent;
+}
+
+main {
+    width: 100%;
+}
+
+.mainContent {
+    width: 100%;
+}
+
+:root {
+    --module-fabricacion-bg-color: #F0F2F5;
+    --module-fabricacion-border-color: #CED3D9;
+    --module-fabricacion-heading-color: #334756;
+    --module-fabricacion-header-border-color: #A0B4C4;
+
+    /* Variables para los tres gráficos pequeños - ESTILO "SALES-CHART" */
+    --chart-box-bg-color: var(--card-bg-color);
+    /* Reutilizar color de fondo de tarjetas */
+    --chart-heading-color: var(--card-heading-color);
+    /* Reutilizar color de títulos de tarjetas */
+
+
+    --ordenes-container-bg-color: var(--card-bg-color);
+    --ordenes-heading-color: var(--card-heading-color);
+
+    /* Variables para el estilo de las tarjetas de órdenes (SIN CAMBIOS) */
+    --orden-card-bg-color: #FFFFFF;
+    --orden-card-bg-hover-color: #F8F9FA;
+    --orden-card-border-color: #5BC0DE;
+    --orden-card-header-border-color: #E0E7EC;
+    --orden-card-id-text-color: #334756;
+    --orden-card-producto-text-color: #6C757D;
+    --orden-card-details-text-color: #777;
+
+    /* Variables para los iconos de estado de las órdenes (SIN CAMBIOS) */
+    --orden-estado-pendiente-color: #FFC107;
+    --orden-estado-en-proceso-color: #007BFF;
+    --orden-estado-completada-color: #28A745;
+
+
+    /* Variables para la barra de progreso en tarjetas de órdenes (SIN CAMBIOS) */
+    --progress-bar-card-bg-color: #E9ECEF;
+    --progress-bar-card-fill-color: #28A745;
+    --progress-percentage-card-text-color: #FFFFFF;
+
+
+    --view-all-ordenes-link-color: var(--view-all-link-color);
+    --view-all-ordenes-link-hover-color: var(--sidebar-menu-item-hover-text-color);
+
+
+    /* Reutilizando variables de Facturación para consistencia (SIN CAMBIOS) */
+    --card-bg-color: #FFFFFF;
+    --card-heading-color: #6C757D;
+    --view-all-link-color: #007BFF;
+    --sidebar-menu-item-hover-text-color: #0056b3;
+
+    --module-original-bg-color: #f8f9fa;
+    /* Fondo gris claro para el módulo */
+    --module-original-border-color: #d3d9df;
+    /* Borde grisáceo */
+    --module-original-heading-color: #343a40;
+    /* Título principal en gris oscuro */
+    --module-original-header-border-color: #adb5bd;
+    /* Borde del header */
+
+    --timeline-container-bg-color: var(--card-bg-color);
+    /* Reutiliza color de tarjeta para el fondo del timeline */
+    --timeline-heading-color: var(--card-heading-color);
+    /* Reutiliza color de título de tarjeta para el título del timeline */
+    --timeline-line-color: #6c757d;
+    /* Línea del timeline en gris medio */
+    --timeline-event-color: #007bff;
+    /* Eventos del timeline en azul */
+    --timeline-label-text-color: #495057;
+    /* Texto de etiquetas del timeline en gris más oscuro */
+
+    --metric-box-bg-color: var(--sidebar-bg-color);
+    /* Reutiliza color de sidebar para cajas de métricas - **FONDO DE CAJAS METRICAS** */
+    --metric-icon-color: #ffffff;
+    /* Iconos de métricas en blanco */
+    --metric-heading-color: #e0e7ec;
+    /* Títulos de métricas en gris claro - **TITULOS METRICAS** */
+    --metric-value-color: #343a40;
+    /* Valores de métricas en blanco - **VALORES METRICAS (TEXTO PRINCIPAL DENTRO DE TARJETA)** */
+    --revenue-metric-color: #28a745;
+    /* Borde superior verde para métrica de ingresos */
+    --pending-metric-color: #ffc107;
+    /* Borde superior amarillo para métrica pendiente */
+
+    --card-bg-color: #f9f9f9;
+    --card-bg-color-rgb: 249, 249, 249;
+    --card-heading-color: #333;
+    --header-border-color: #ddd;
+    --card-text-color: #555;
+    --input-border-color: #ccc;
+    --input-bg-color: #fff;
+    --input-text-color: #333;
+    --primary-color: #007bff;
+    --primary-color-darker: #0056b3;
+    --primary-color-transparent: rgba(0, 123, 255, 0.2);
+    --button-text-color: #fff;
+    --error-color: #dc3545;
+    --error-bg-color: #f8d7da;
+    --success-color: #28a745;
+    --success-bg-color: #d4edda;
+}
