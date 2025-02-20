@@ -104,6 +104,15 @@
                 >
             </form>
         </div>
+        <div class="switch-form-links-original">
+            <button
+                type="button"
+                class="switch-button-original"
+                on:click={switchToLogin}
+            >
+                ¿Ya tienes cuenta? Inicia Sesión
+            </button>
+        </div>
     </div>
 </section>
 
@@ -236,23 +245,24 @@
         text-align: center;
     }
 
-    :root {
-        /* Define success color variables and ensure other variables are defined if not already present */
-        --card-bg-color: #f9f9f9;
-        --card-bg-color-rgb: 249, 249, 249;
-        --card-heading-color: #333;
-        --header-border-color: #ddd;
-        --card-text-color: #555;
-        --input-border-color: #ccc;
-        --input-bg-color: #fff;
-        --input-text-color: #333;
-        --primary-color: #007bff;
-        --primary-color-darker: #0056b3;
-        --primary-color-transparent: rgba(0, 123, 255, 0.2);
-        --button-text-color: #fff;
-        --error-color: #dc3545;
-        --error-bg-color: #f8d7da;
-        --success-color: #28a745; /* Example success color */
-        --success-bg-color: #d4edda; /* Example success background color */
+    .switch-form-links-original {
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .switch-button-original {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 1em;
+        transition: color 0.2s ease-in-out;
+        text-decoration: underline; /* Add underline for link appearance */
+        padding: 5px 10px; /* Add some padding for better click area */
+        border-radius: 5px; /* Optional: Add slight border radius */
+    }
+
+    .switch-button-original:hover {
+        color: var(--primary-color-darker);
     }
 </style>

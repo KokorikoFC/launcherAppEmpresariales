@@ -4,6 +4,7 @@
     import { collection, doc, getDoc } from "firebase/firestore"; // Import Firestore functions
     import BackgroundBlur from "./components/BackgroundBlur.svelte";
     import { isLoggedIn } from "../lib/stores/authStore";
+    import { userRole } from '../lib/stores/userRoleStore'; // Import userRole store
 
     let email = "";
     let password = "";
@@ -31,8 +32,9 @@
                 const userData = docSnap.data();
                 console.log("Datos de usuario de Firestore:", userData);
 
-                // For now, just check if the user exists in Firestore.
-                // You can add role-based checks here later if needed (e.g., if (userData.role === 'administrator') ...)
+                // Store user role in userRoleStore
+                userRole.set(userData.role); // Set the user's role in the store
+                console.log("User role set to:", userData.role);
 
                 // 3. If user exists in Firestore, consider login successful and update store
                 isLoggedIn.set(true);
@@ -230,24 +232,6 @@
         margin-bottom: 18px;
         font-size: 0.95em;
         text-align: center;
-    }
-
-    :root {
-        /* Color variables (same as before) */
-        --card-bg-color: #f9f9f9;
-        --card-bg-color-rgb: 249, 249, 249;
-        --card-heading-color: #333;
-        --header-border-color: #ddd;
-        --card-text-color: #555;
-        --input-border-color: #ccc;
-        --input-bg-color: #fff;
-        --input-text-color: #333;
-        --primary-color: #007bff;
-        --primary-color-darker: #0056b3;
-        --primary-color-transparent: rgba(0, 123, 255, 0.2);
-        --button-text-color: #fff;
-        --error-color: #dc3545;
-        --error-bg-color: #f8d7da;
     }
 
     .switch-form-links-original {
