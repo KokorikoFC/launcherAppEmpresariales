@@ -8,6 +8,7 @@
     let password = "";
     let errorMessage = "";
     let successMessage = "";
+    let selectedRole = "usuario"; // Default role
 
     import { createEventDispatcher } from "svelte";
     const dispatch = createEventDispatcher();
@@ -15,7 +16,7 @@
     function switchToLogin() {
         console.log(
             "Register.svelte: switchToLogin() called - Dispatching 'switchToLogin' event",
-        ); // ADDED LOG
+        );
         dispatch("switchToLogin");
     }
 
@@ -39,7 +40,7 @@
             await setDoc(userDocRef, {
                 // Set data for the user document
                 email: email,
-                role: "administrator", // Set default role as 'administrator'
+                role: selectedRole, // Use selected role
             });
 
             console.log("Datos de usuario guardados en Firestore");
@@ -92,6 +93,14 @@
                     />
                 </div>
 
+                <div class="form-group-original">
+                    <label for="role">Rol</label>
+                    <select class="input-original" id="role" bind:value={selectedRole}>
+                        <option value="usuario">Usuario</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </div>
+
                 {#if errorMessage}
                     <div class="error-message-original">{errorMessage}</div>
                 {/if}
@@ -117,7 +126,6 @@
 </section>
 
 <style>
-    /* Reutilizando estilos de Login.svelte, puedes crear un archivo CSS común si lo deseas */
     .login-module-section-original {
         position: fixed;
         top: 0;
@@ -234,10 +242,10 @@
     .success-message-original {
         color: var(
             --success-color
-        ); /* Define success color variable in :root if not already defined */
+        );
         background-color: var(
             --success-bg-color
-        ); /* Define success background color variable in :root if not already defined */
+        ); 
         padding: 11px 14px;
         border-radius: 8px;
         margin-bottom: 18px;
@@ -249,7 +257,7 @@
         margin-top: 20px;
         text-align: center;
     }
-    
+
     .switch-button-original {
         background: none;
         border: none;
@@ -257,9 +265,9 @@
         cursor: pointer;
         font-size: 1em;
         transition: color 0.2s ease-in-out;
-        text-decoration: underline; /* Add underline for link appearance */
-        padding: 5px 10px; /* Add some padding for better click area */
-        border-radius: 5px; /* Optional: Add slight border radius */
+        text-decoration: underline;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 
     .switch-button-original:hover {
