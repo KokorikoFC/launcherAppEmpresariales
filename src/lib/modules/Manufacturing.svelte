@@ -24,10 +24,10 @@
             { categoria: "Textil", cantidad: 700, coste: 800 }     // Añadido coste ficticio
         ],
         ordenesFabricacion: [
-            { idOrden: "OF-2025-001", producto: "Producto B", fechaInicio: "2025-02-15", estado: "En Proceso", progreso: 60 },
-            { idOrden: "OF-2025-002", producto: "Producto A", fechaInicio: "2025-02-18", estado: "Pendiente", progreso: 20 },
-            { idOrden: "OF-2025-003", producto: "Producto C", fechaInicio: "2025-02-19", estado: "Completada", progreso: 100 },
-            { idOrden: "OF-2025-004", producto: "Producto D", fechaInicio: "2025-02-19", estado: "En Proceso", progreso: 85 }
+            { idOrden: "OF-2025-001", producto: "Silla de oficina", fechaInicio: "2025-02-15", estado: "En Proceso", progreso: 60 },
+            { idOrden: "OF-2025-002", producto: "Mesa de Roble", fechaInicio: "2025-02-18", estado: "Pendiente", progreso: 20 },
+            { idOrden: "OF-2025-003", producto: "Sofá Cama", fechaInicio: "2025-02-19", estado: "Completada", progreso: 100 },
+            { idOrden: "OF-2025-004", producto: "Estantería Metálica", fechaInicio: "2025-02-19", estado: "En Proceso", progreso: 85 }
         ]
     };
 

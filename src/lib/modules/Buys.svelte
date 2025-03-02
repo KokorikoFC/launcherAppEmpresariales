@@ -9,31 +9,31 @@
     // Datos de compras ficticios
     const purchasesData = [
         {
-            producto: "Producto D",
+            producto: "Intel i9",
             fecha: "2025-02-14",
             cantidad: 200,
             coste: 3000,
         },
         {
-            producto: "Producto E",
+            producto: "Silla",
             fecha: "2025-02-14",
             cantidad: 150,
             coste: 2250,
         },
         {
-            producto: "Producto F",
+            producto: "RTX 4070",
             fecha: "2025-02-13",
             cantidad: 250,
             coste: 3750,
         },
         {
-            producto: "Producto D",
+            producto: "Camisa Polo",
             fecha: "2025-02-13",
             cantidad: 180,
             coste: 2700,
         },
         {
-            producto: "Producto E",
+            producto: "Toner HP 85A",
             fecha: "2025-02-12",
             cantidad: 220,
             coste: 3300,
@@ -42,7 +42,7 @@
 
     // Datos procesados para gráficas de compras
     const chart1DataCompras = d3.rollup(
-        purchasesData,
+        purchasesData.slice(0,3),
         (v) => d3.sum(v, (d) => d.coste),
         (d) => d.producto,
     );

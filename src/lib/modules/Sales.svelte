@@ -9,31 +9,31 @@
     // Datos de ventas ficticios (puedes mover esto a un store o servicio)
     const salesData = [
         {
-            producto: "Producto A",
+            producto: "PS5",
             fecha: "2025-02-14",
             cantidad: 150,
             ingresos: 7500,
         },
         {
-            producto: "Producto B",
+            producto: "Mesa Negra",
             fecha: "2025-02-14",
             cantidad: 200,
             ingresos: 12000,
         },
         {
-            producto: "Producto C",
+            producto: "Intel i9",
             fecha: "2025-02-13",
             cantidad: 100,
             ingresos: 5000,
         },
         {
-            producto: "Producto A",
+            producto: "Iphone 14",
             fecha: "2025-02-13",
             cantidad: 120,
             ingresos: 6000,
         },
         {
-            producto: "Producto B",
+            producto: "Monitor LG",
             fecha: "2025-02-12",
             cantidad: 180,
             ingresos: 10800,
