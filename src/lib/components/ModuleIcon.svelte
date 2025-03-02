@@ -29,6 +29,7 @@
         align-items: center;
         text-align: left;
         cursor: pointer;
+        height: 70px;
     }
 
     .module-icon:hover {
