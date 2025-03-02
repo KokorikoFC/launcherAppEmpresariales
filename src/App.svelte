@@ -11,6 +11,7 @@
     import Header from "./lib/components/Header.svelte";
     import ModuleGridSection from "./lib/components/ModuleGridSection.svelte";
     import BackgroundBlur from "./lib/components/BackgroundBlur.svelte";
+    import EmployeesScreen from "./lib/modules/Employees.svelte";
 
     let moduloActivo = "dashboard"; // Estado para controlar el módulo activo, 'dashboard' por defecto
 
@@ -37,7 +38,9 @@
     <main class="main-content">
         <Header />
         {#if moduloActivo === "dashboard"}
-            <ModuleGridSection />
+            <ModuleGridSection
+                on:moduloSeleccionado={(event) => cambiarModulo(event.detail)}
+            />
         {:else if moduloActivo === "ventas"}
             <VentasScreen />
         {:else if moduloActivo === "compras"}
@@ -46,6 +49,8 @@
             <InventarioScreen />
         {:else if moduloActivo === "facturacion"}
             <FacturacionScreen />
+        {:else if moduloActivo === "empleados"}
+            <EmployeesScreen />
         {:else if moduloActivo === "fabricacion"}
             <FabricacionScreen />
         {/if}

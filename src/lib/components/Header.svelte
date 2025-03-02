@@ -24,7 +24,7 @@
 
 <header class="header-section">
     <div class="search-filter">
-        <h1>Dashboard</h1>
+        <h1>Kokodoo</h1>
     </div>
     <div class="header-icons">
         <button class="settings-icon-btn">

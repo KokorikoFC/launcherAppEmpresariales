@@ -2,88 +2,97 @@
     import ModuleIcon from "./ModuleIcon.svelte";
     import { userRole } from "../stores/userRoleStore"; // Import userRole store
     export let searchInput = ""; // Prop for the buscador
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher(); // Crear dispatcher
 
     const allModules = [
         // Define all modules for admin
         {
             name: "Ventas",
-            description: "Gestiona el proceso de ventas",
-            iconClass: "fas fa-shopping-cart",
+            name_active: "ventas",
+            description: "Gestiona el proceso de ventas y clientes",
+            iconClass: "fas fa-hand-holding-usd", // Icon class as string
         },
         {
             name: "Facturación",
-            description: "Crea y envía facturas a clientes",
-            iconClass: "fas fa-file-invoice-dollar",
+            name_active: "facturacion",
+            description: "Crea y gestiona facturas y pagos",
+            iconClass: "fas fa-file-invoice", // Icon class as string
         },
         {
             name: "Inventario",
-            description: "Controla el stock de productos",
-            iconClass: "fas fa-warehouse",
+            name_active: "inventario",
+            description: "Control y gestión de stock de productos",
+            iconClass: "fas fa-boxes", // Icon class as string
         },
         {
-            name: "RR. HH.",
-            description: "Gestiona empleados y nóminas de forma eficiente",
-            iconClass: "fas fa-users",
+            name: "Compras",
+            name_active: "compras",
+            description: "Gestiona órdenes de compra a proveedores",
+            iconClass: "fas fa-shopping-cart", 
+        },
+        {
+            name: "Fabricación",
+            name_active: "fabricacion",
+            description: "Control de procesos de fabricación",
+            iconClass: "fas fa-industry", 
+        },
+        {
+            name: "Empleados",
+            name_active: "empleados",
+            description: "Gestión de información del personal",
+            iconClass: "fas fa-user-tie", 
         },
         {
             name: "Informes",
-            description: "Genera informes personalizados y detallados",
-            iconClass: "fas fa-chart-bar",
-        },
-        {
-            name: "Configuración",
-            description: "Ajustes generales del sistema",
-            iconClass: "fas fa-cog",
+            description: "Generación de informes y análisis de datos",
+            iconClass: "fas fa-chart-bar", 
         },
         {
             name: "Proyectos",
-            description: "Administra proyectos y tareas con facilidad",
-            iconClass: "fas fa-project-diagram",
+            description: "Planificación y seguimiento de proyectos",
+            iconClass: "fas fa-project-diagram", 
         },
         {
             name: "Calendario",
-            description: "Organiza tu agenda y eventos",
-            iconClass: "fas fa-calendar-alt",
+            description: "Organización de eventos y agenda",
+            iconClass: "fas fa-calendar-alt", 
         },
         {
             name: "CRM",
-            description: "Gestiona relaciones con clientes y prospectos",
-            iconClass: "fas fa-user-tie",
+            description: "Gestión de Relaciones con Clientes (CRM)",
+            iconClass: "fas fa-users",
         },
         {
             name: "Marketing",
-            description: "Crea campañas de marketing efectivas",
-            iconClass: "fas fa-envelope-open-text",
+            description: "Creación y gestión de campañas de marketing",
+            iconClass: "fas fa-bullhorn", 
         },
         {
             name: "Analítica",
-            description: "Analiza datos y métricas clave",
-            iconClass: "fas fa-chart-line",
-        },
-        {
-            name: "Ventas",
-            description: "Impulsa tus ventas y conversiones",
-            iconClass: "fas fa-funnel-dollar",
+            description: "Análisis de métricas e indicadores clave",
+            iconClass: "fas fa-chart-line", 
         },
         {
             name: "Formación",
-            description: "Gestiona programas de formación y cursos",
-            iconClass: "fas fa-graduation-cap",
+            description: "Gestión de programas de formación interna",
+            iconClass: "fas fa-graduation-cap", 
         },
         {
             name: "Soporte",
-            description: "Ofrece atención al cliente de calidad",
-            iconClass: "fas fa-hand-holding-heart",
+            description: "Atención y soporte al cliente",
+            iconClass: "fas fa-headset", 
         },
         {
             name: "Internacional",
-            description: "Expande tu negocio a nivel global",
-            iconClass: "fas fa-globe",
+            description: "Gestión de operaciones internacionales",
+            iconClass: "fas fa-globe", 
         },
         {
             name: "Redes",
-            description: "Gestiona tus redes y contactos profesionales",
-            iconClass: "fas fa-network-wired",
+            description: "Gestión de redes profesionales y contactos",
+            iconClass: "fas fa-share-alt", 
         },
     ];
 
@@ -91,24 +100,29 @@
 
     $: filteredModules = searchInput
         ? (() => {
-            const currentModules =
-                $userRole === "administrator" ? allModules : userModules;
-            return currentModules.filter((module) =>
-                module.name.toLowerCase().includes(searchInput.toLowerCase()),
-            );
-        })()
+              const currentModules =
+                  $userRole === "administrator" ? allModules : userModules;
+              return currentModules.filter((module) =>
+                  module.name.toLowerCase().includes(searchInput.toLowerCase()),
+              );
+          })()
         : $userRole === "administrator"
-        ? allModules
-        : userModules;
+          ? allModules
+          : userModules;
 </script>
 
 <section class="module-grid-section" id="cardContainer">
     {#each filteredModules as module}
-        <ModuleIcon
-            moduleName={module.name}
-            moduleDescription={module.description}
-            iconClass={module.iconClass}
-        />
+        <div
+            on:click={() => dispatch("moduloSeleccionado", module.name_active)}
+            style="cursor: pointer;"
+        >
+            <ModuleIcon
+                moduleName={module.name}
+                moduleDescription={module.description}
+                iconClass={module.iconClass}
+            />
+        </div>
     {/each}
 </section>
 

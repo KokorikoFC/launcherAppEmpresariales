@@ -19,42 +19,49 @@
             <a
                 class:active={moduloActivo === "dashboard"}
                 on:click={() => seleccionarModulo("dashboard")}
-                ><i class="fas fa-rocket"></i>Dashboard</a
+                ><i class="fas fa-tachometer-alt"></i>Dashboard</a
             >
         </li>
         <li>
             <a
                 class:active={moduloActivo === "ventas"}
                 on:click={() => seleccionarModulo("ventas")}
-                ><i class="fas fa-shopping-cart"></i>Ventas</a
+                ><i class="fas fa-hand-holding-usd"></i>Ventas</a
             >
         </li>
         <li>
             <a
                 class:active={moduloActivo === "facturacion"}
                 on:click={() => seleccionarModulo("facturacion")}
-                ><i class="fas fa-file-invoice-dollar"></i>Facturación</a
+                ><i class="fas fa-file-invoice"></i>Facturación</a
             >
         </li>
         <li>
             <a
                 class:active={moduloActivo === "inventario"}
                 on:click={() => seleccionarModulo("inventario")}
-                ><i class="fas fa-warehouse"></i>Inventario</a
+                ><i class="fas fa-boxes"></i>Inventario</a
             >
         </li>
         <li>
             <a
                 class:active={moduloActivo === "compras"}
                 on:click={() => seleccionarModulo("compras")}
-                ><i class="fas fa-users"></i>Compra</a
+                ><i class="fas fa-shopping-cart"></i>Compras</a
             >
         </li>
         <li>
             <a
                 class:active={moduloActivo === "fabricacion"}
                 on:click={() => seleccionarModulo("fabricacion")}
-                ><i class="fas fa-chart-bar"></i>Fabricacion</a
+                ><i class="fas fa-industry"></i>Fabricación</a
+            >
+        </li>
+        <li>
+            <a
+                class:active={moduloActivo === "empleados"}
+                on:click={() => seleccionarModulo("empleados")}
+                ><i class="fas fa-user-tie"></i>Empleados</a
             >
         </li>
     </ul>
@@ -100,7 +107,7 @@
 
     .sidebar-logo {
         padding: 20px;
-        text-align: left;
+        text-align: center;
         /* Logo a la izquierda */
         margin-bottom: 25px;
     }
