@@ -101,12 +101,12 @@
     $: filteredModules = searchInput
         ? (() => {
               const currentModules =
-                  $userRole === "administrator" ? allModules : userModules;
+                  $userRole === "administrador" ? allModules : userModules;
               return currentModules.filter((module) =>
                   module.name.toLowerCase().includes(searchInput.toLowerCase()),
               );
           })()
-        : $userRole === "administrator"
+        : $userRole === "administrador"
           ? allModules
           : userModules;
 </script>

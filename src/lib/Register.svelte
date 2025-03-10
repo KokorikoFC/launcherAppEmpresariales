@@ -97,7 +97,7 @@
                     <label for="role">Rol</label>
                     <select class="input-original" id="role" bind:value={selectedRole}>
                         <option value="usuario">Usuario</option>
-                        <option value="administrador">Administrador</option>
+                        <option value="administrator">Administrador</option>
                     </select>
                 </div>
 

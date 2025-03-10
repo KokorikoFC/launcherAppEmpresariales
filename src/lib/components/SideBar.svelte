@@ -19,7 +19,7 @@
             <a
                 class:active={moduloActivo === "dashboard"}
                 on:click={() => seleccionarModulo("dashboard")}
-                ><i class="fas fa-tachometer-alt"></i>Dashboard</a
+                ><i class="fas fa-tachometer-alt"></i>Apps</a
             >
         </li>
         <li>
