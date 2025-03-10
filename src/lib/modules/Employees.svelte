@@ -18,9 +18,9 @@
         fotoUrl: "src/assets/img/employee-2.png",
     },
     {
-        nombre: "Ana Martínez",
+        nombre: "Yeyun Chen",
         puesto: "Contable",
-        email: "ana.martinez@ejemplo.es",
+        email: "yeyun.chen@ejemplo.es",
         telefono: "712 345 678",
         fotoUrl: "src/assets/img/employee-3.png",
     },
